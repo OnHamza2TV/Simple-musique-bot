@@ -1,14 +1,14 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const token = 'NTgxODEzNTQxNjk5NDUyOTI5.XgzAgg.V_KdvqiRE_FNlGFGiIwmwWLU4gQ';
-const PREFIX ='m!';
+const token = 'TOKEN DE TON BOT';
+const PREFIX ='PREFIX DE TON BOT';
 var servers = {};
 
 const ytdl = require("ytdl-core");
 
 bot.on('ready',()=>{
-    console.log('This bot is online!')
+    console.log('Je Suis Pret!')
 })
 
 bot.on('message',message =>{
@@ -33,11 +33,11 @@ bot.on('message',message =>{
             }
 
             if(!args[1]){
-                message.channel.send("you need to provide a link");
+                message.channel.send("vous devez fournir un lien");
                 return;
             }
             if(!message.member.voiceChannel){
-                message.channel.send("you must be in a channel to play the bot !");
+                message.channel.send("vous devez être dans un channel vocal pour jouer au bot !");
                 return;
             }
 
@@ -67,8 +67,8 @@ bot.on('message',message =>{
                         server.queue.splice(i,1);
                     }
                     server.dispatcher.end();
-                    message.channel.send("Ending the queue leaving the voice channel")
-                    console.log('stopped the queue')
+                    message.channel.send("Fin de la file d'attente en quittant le channel vocal")
+                    console.log('musique arrete')
                 }
                 if(message.guild.connection) message.guild.voiceConnection.disconnect();
         
